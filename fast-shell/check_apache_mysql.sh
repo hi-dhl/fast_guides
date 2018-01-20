@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-path=/var/log/bsweb
-log=${path}/shadowsock-bsweb.log
+path=/var/log
+log=${path}/httpd-mysql.log
 
-name=(nginx mysql)
+name=(apache mysql)
 
-exs_init[0]="/etc/init.d/mysqld start"
+exs_init[0]="service httpd start"
 exs_init[1]="/etc/init.d/mysqld restart"
 
 for ((i=0; i<2; i++)); do
