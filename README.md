@@ -388,12 +388,12 @@ sh脚本结合系统命令便有了强大的威力，在字符处理领域，有
 #### 例如定时检测nginx、mysql是否被关闭
 
 ```
-path=/var/log/bsweb
-log=${path}/shadowsock-bsweb.log
+path=/var/log
+log=${path}/httpd-mysql.log
 
-name=(nginx mysql)
+name=(apache mysql)
 
-exs_init[0]="/etc/init.d/mysqld start"
+exs_init[0]="service httpd start"
 exs_init[1]="/etc/init.d/mysqld restart"
 
 for ((i=0; i<2; i++)); do
