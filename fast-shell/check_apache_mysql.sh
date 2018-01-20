@@ -2,7 +2,7 @@
 
 path=/var/log
 log=${path}/httpd-mysql.log
-
+ 
 name=(apache mysql)
 
 exs_init[0]="service httpd start"
