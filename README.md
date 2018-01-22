@@ -412,7 +412,7 @@ done
 解释：检测 nginx、mysql进程是否存在，如果不存在了会自动重新启动。
 脚本每次运行会写日志的，没事可以去看看该日志文件，如果进程是不是真的经常性不存在，恐怕就要排查一下深层原因了。
 
-源码：[check_nginx.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/check_nginx_mysql.sh)
+源码：[check_nginx.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/check_apache_mysql.sh)
 
 #### 编辑 /etc/crontab 文件
 
@@ -423,10 +423,12 @@ crontab -e
 在文件最后添加一行：
 
 ```
-*/3 * * * * /xxx/check_nginx.sh
+*/5 * * * * /xxx/check_nginx.sh > /dev/null 2>&1
 ```
 
 上表示每 5 分钟，执行一下脚本 /xxx/check_nginx.sh，其中xxx代表路径
+
+/dev/null 2>&1 的意思是该条shell命令将不会输出任何信息到控制台，也不会有任何信息输出到文件中。
 
 ```
 # For details see man 4 crontabs
@@ -446,5 +448,3 @@ crontab -e
 ```
 service crond restart
 ```
-
-
