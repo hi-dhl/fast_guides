@@ -2,7 +2,7 @@
 
 ## 前言
 
-写下这篇文章，是对自己在学习和使用过程中的总结，文笔不是很好，如果有什么问题欢迎沟通交流 , weibo: OO是有情怀的PM
+写下这篇文章，是对自己在学习和使用过程中的总结，文笔不是很好，如果有什么问题欢迎沟通交流 
 
 ## Shell是什么
 
@@ -18,7 +18,7 @@ Mac OS，Linux 自带了shell解释器，Windows比较麻烦，因为Win7专业�
 
 PHP、Python是属于高级编程语言，但是也可以做Shell编程，因为只要有解释器，也可以用作脚本编程
 
-如下是一个Python Shell Script示例（假设文件名叫op_python_base.py）：
+如下是一个Python Shell Script示例（假设文件名叫op\_python\_base.py）：
 
 ```
 #!/usr/bin/env python3 //告诉Python从系统环境中找python
@@ -28,9 +28,9 @@ for index in range(10):
     print(index);
 ```
 
-源码：[op_python_base](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_python_base.py)
+源码：[op\_python\_base](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_python_base.py)
 
-如下是一个PHP Shell Script示例（假设文件名叫op_php_base.php）：
+如下是一个PHP Shell Script示例（假设文件名叫op\_php\_base.php）：
 
 ```
 #!/usr/bin/php
@@ -41,10 +41,9 @@ for($i=0 ;$i<10; $i++){
 }
 
 ?>
-
 ```
 
-源码：[op_php_base](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_php_base.php)
+源码：[op\_php\_base](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_php_base.php)
 
 ## 为什么要学习Shell
 
@@ -60,12 +59,11 @@ sh: Bourne shell，POSIX（Portable Operating System Interface）标准的shell�
 
 bash: Bash是Bourne shell的替代品，属GNU Project，二进制文件路径通常是/bin/bash
 
-
 ## 第一个shell脚本
 
 ### 我们先来看一个例子
 
-我相信写过代码的童鞋，应该对下面的代码很熟悉并不陌生，（假设文件名叫op_base.sh）：
+我相信写过代码的童鞋，应该对下面的代码很熟悉并不陌生，（假设文件名叫op\_base.sh）：
 
 ```
 #!/usr/bin/env bash
@@ -77,18 +75,18 @@ for ((i=0; i<3; i++)); do
 done
 ```
 
-第一行：从系统path中寻找指定脚本的解释程序
-第二行：创建 名叫code文件夹
-第三行：进入创建的文件夹
-第四行：for循环3次
-第四行：创建文件
-第五行：往创建的文件中写入信息
+第一行：从系统path中寻找指定脚本的解释程序  
+第二行：创建 名叫code文件夹  
+第三行：进入创建的文件夹  
+第四行：for循环3次  
+第四行：创建文件  
+第五行：往创建的文件中写入信息  
 第六行：结束循环
 
-mkdir, touch，cd，touch，echo都是系统命令，在命令行下可以直接执行
+mkdir, touch，cd，touch，echo都是系统命令，在命令行下可以直接执行  
 for, do, done 是shell脚本语言 for循环的语法
 
-源码：[op_base.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_base.sh)
+源码：[op\_base.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_base.sh)
 
 ### 编写Shell
 
@@ -102,9 +100,12 @@ for, do, done 是shell脚本语言 for循环的语法
 #!/usr/bin/env bash
 ```
 
- #!”是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行
-    /env 是系统的PATH目录中查找
-    
+# !”是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行
+
+```
+/env 是系统的PATH目录中查找
+```
+
 ### 运行 Shell 脚本有两种方法：
 
 #### 作为可执行程序
@@ -114,8 +115,8 @@ chmod +x op_base.sh
 ./op_base.sh
 ```
 
-第一行设置 op_base.sh可执行权限
-第二行执行op_base.sh
+第一行设置 op\_base.sh可执行权限  
+第二行执行op\_base.sh
 
 #### 作为参数
 
@@ -161,11 +162,11 @@ echo ${my_name}
 
 ### 注释
 
-以“#”开头的行就是注释，会被解释器忽略。
+以“\#”开头的行就是注释，会被解释器忽略。
 
 #### 多行注释
 
-sh里没有多行注释，只能每一行加一个#号。就像这样：
+sh里没有多行注释，只能每一行加一个\#号。就像这样：
 
 ```
 #--------------------------------------------
@@ -195,7 +196,6 @@ Shell不像其他语言有php、python 有很多数据类型，在Shell中常用
 * 双引号里可以有变量
 * 双引号里可以出现转义字符
 
-
 ### 字符串操作
 
 #### 拼接字符串
@@ -219,7 +219,7 @@ echo ${#my_name}
 echo ${my_name:0:2}
 ```
 
-源码：[op_str.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_str.sh)
+源码：[op\_str.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_str.sh)
 
 ### Shell 数组
 
@@ -279,11 +279,11 @@ lengthn=${#name[n]}
 echo $length
 ```
 
-源码：[op_arry.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_arry.sh)
+源码：[op\_arry.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_arry.sh)
 
 ### Shell 流程控制
 
-和Java、PHP、Python等语言不一样，sh的流程控制不可为空，如(以下为PHP流程控制写法)：
+和Java、PHP、Python等语言不一样，sh的流程控制不可为空，如\(以下为PHP流程控制写法\)：
 
 ```
 <?php
@@ -331,10 +331,9 @@ if [ $a == $b ]
     echo "没有符合的条件"
 
  fi
-
 ```
 
-源码：[op_if.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_if.sh)
+源码：[op\_if.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_if.sh)
 
 #### for 循环
 
@@ -363,7 +362,7 @@ for ((i=0; i<5; i++)); do
 done
 ```
 
-源码：[op_for.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_for.sh)
+源码：[op\_for.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_for.sh)
 
 #### while 语句
 
@@ -378,7 +377,7 @@ do
 done
 ```
 
-源码：[op_while.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_while.sh)
+源码：[op\_while.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/op_while.sh)
 
 ### Shell结合系统命令
 
@@ -386,32 +385,30 @@ sh脚本结合系统命令便有了强大的威力，在字符处理领域，有
 
 #### 例如定时检测nginx、mysql是否被关闭
 
-```
-path=/var/log
-log=${path}/httpd-mysql.log
+    path=/var/log
+    log=${path}/httpd-mysql.log
 
-name=(apache mysql)
+    name=(apache mysql)
 
-exs_init[0]="service httpd start"
-exs_init[1]="/etc/init.d/mysqld restart"
+    exs_init[0]="service httpd start"
+    exs_init[1]="/etc/init.d/mysqld restart"
 
-for ((i=0; i<2; i++)); do
-    echo "检查${name[i]}进程是否存在"
-    ps -ef|grep ${name[i]} |grep -v grep
-    if [ $? -eq 0 ]; then
-        pid=$(pgrep -f ${name[i]})
-        echo "`date +"%Y-%m-%d %H:%M:%S"` ${name[$i]} is running with pid $pid" >> ${log}
-     else
-        $(${exs_init[i]})
-        echo "`date +"%Y-%m-%d %H:%M:%S"` ${name[$i]} start success" >> ${log}
-    fi
-done
-```
+    for ((i=0; i<2; i++)); do
+        echo "检查${name[i]}进程是否存在"
+        ps -ef|grep ${name[i]} |grep -v grep
+        if [ $? -eq 0 ]; then
+            pid=$(pgrep -f ${name[i]})
+            echo "`date +"%Y-%m-%d %H:%M:%S"` ${name[$i]} is running with pid $pid" >> ${log}
+         else
+            $(${exs_init[i]})
+            echo "`date +"%Y-%m-%d %H:%M:%S"` ${name[$i]} start success" >> ${log}
+        fi
+    done
 
-解释：检测 nginx、mysql进程是否存在，如果不存在了会自动重新启动。
+解释：检测 nginx、mysql进程是否存在，如果不存在了会自动重新启动。  
 脚本每次运行会写日志的，没事可以去看看该日志文件，如果进程是不是真的经常性不存在，恐怕就要排查一下深层原因了。
 
-源码：[check_nginx.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/check_apache_mysql.sh)
+源码：[check\_nginx.sh](https://github.com/dpm100/fast_guides/blob/master/fast-shell/check_apache_mysql.sh)
 
 #### 编辑 /etc/crontab 文件
 
@@ -425,9 +422,9 @@ crontab -e
 */5 * * * * /xxx/check_nginx.sh > /dev/null 2>&1
 ```
 
-上表示每 5 分钟，执行一下脚本 /xxx/check_nginx.sh，其中xxx代表路径
+上表示每 5 分钟，执行一下脚本 /xxx/check\_nginx.sh，其中xxx代表路径
 
-/dev/null 2>&1 的意思是该条shell命令将不会输出任何信息到控制台，也不会有任何信息输出到文件中。
+/dev/null 2&gt;&1 的意思是该条shell命令将不会输出任何信息到控制台，也不会有任何信息输出到文件中。
 
 ```
 # For details see man 4 crontabs
@@ -447,3 +444,6 @@ crontab -e
 ```
 service crond restart
 ```
+
+
+
